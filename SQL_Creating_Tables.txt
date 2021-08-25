@@ -1,0 +1,54 @@
+CREATE TABLE Admin
+(
+	Emp_id INT CONSTRAINT pk_emp_id PRIMARY KEY IDENTITY(1000, 1),
+	First_name varchar(20) NOT NULL,
+	Last_name varchar(20),
+	Contact_number varchar(10) UNIQUE,
+	Email varchar(40) ,
+	Address varchar(50),
+	Username varchar(20),
+	Password varchar(100)
+)
+
+
+CREATE TABLE Movies
+(
+	Movie_id INT CONSTRAINT pk_movie_id PRIMARY KEY IDENTITY(100, 1),
+	Title VARCHAR(40),
+	Description VARCHAR(200),
+	Rating SMALLINT,
+	Release_year DATE,
+	Duration TIME,
+	Budget MONEY,
+	Language_id SMALLINT CONSTRAINT Fk_language_id FOREIGN KEY REFERENCES Language(Language_id) ON DELETE CASCADE,
+	Category_id SMALLINT CONSTRAINT Fk_category_id FOREIGN KEY REFERENCES Category(Category_id) ON DELETE CASCADE,
+	Actor_id SMALLINT CONSTRAINT Fk_actor_id FOREIGN KEY REFERENCES Actor(Actor_id) ON DELETE CASCADE
+)
+
+CREATE TABLE Language
+(
+	Language_id SMALLINT CONSTRAINT Pk_language_id PRIMARY KEY IDENTITY(100, 1),
+	Language VARCHAR(20)
+)
+
+CREATE TABLE Category
+(
+	Category_id SMALLINT CONSTRAINT Pk_category_id PRIMARY KEY IDENTITY(100, 1),
+	Category VARCHAR(20)
+)
+
+CREATE TABLE Actor
+(
+	Actor_id SMALLINT CONSTRAINT Pk_actor_id PRIMARY KEY IDENTITY(100, 1),
+	Lead_Actor VARCHAR(40)
+)
+
+CREATE TABLE [dbo].[Customer](
+	[Customer_id] [int] IDENTITY(1000,1) NOT NULL PRIMARY KEY,
+	[First_name] [varchar](20) NOT NULL,
+	[Last_name] [varchar](20) NULL,
+	[Contact_number] [varchar](10) NOT NULL,
+	[Email] [varchar](40) NOT NULL,
+	[Address] [varchar](50) NULL,
+	[Username] [varchar](20) NOT NULL,
+	[Password] [varchar](100) NOT NULL)

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MoiveBox_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Actor">
+    <Key>
+      <PropertyRef Name="Actor_id" />
+    </Key>
+    <Property Name="Actor_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lead_Actor" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Emp_id" />
+    </Key>
+    <Property Name="Emp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Last_name" Type="varchar" MaxLength="20" />
+    <Property Name="Contact_number" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="varbinary" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Category_id" />
+    </Key>
+    <Property Name="Category_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Language_id" />
+    </Key>
+    <Property Name="Language_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Language" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="Movie_id" />
+    </Key>
+    <Property Name="Movie_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="40" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="Rating" Type="smallint" />
+    <Property Name="Release_year" Type="date" />
+    <Property Name="Duration" Type="varchar" MaxLength="20" />
+    <Property Name="Budget" Type="money" />
+    <Property Name="Poster" Type="varchar" MaxLength="200" />
+    <Property Name="Language_id" Type="smallint" />
+    <Property Name="Category_id" Type="smallint" />
+    <Property Name="Actor_id" Type="smallint" />
+  </EntityType>
+  <Association Name="Fk_actor_id">
+    <End Role="Actor" Type="Self.Actor" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actor">
+        <PropertyRef Name="Actor_id" />
+      </Principal>
+      <Dependent Role="Movies">
+        <PropertyRef Name="Actor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_category_id">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Category_id" />
+      </Principal>
+      <Dependent Role="Movies">
+        <PropertyRef Name="Category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_language_id">
+    <End Role="Language" Type="Self.Language" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Language_id" />
+      </Principal>
+      <Dependent Role="Movies">
+        <PropertyRef Name="Language_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MoiveBox_DatabaseModelStoreContainer">
+    <EntitySet Name="Actor" EntityType="Self.Actor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Fk_actor_id" Association="Self.Fk_actor_id">
+      <End Role="Actor" EntitySet="Actor" />
+      <End Role="Movies" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_category_id" Association="Self.Fk_category_id">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Movies" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_language_id" Association="Self.Fk_language_id">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="Movies" EntitySet="Movies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

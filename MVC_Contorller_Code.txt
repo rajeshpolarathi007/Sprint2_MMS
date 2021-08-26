@@ -1,0 +1,96 @@
+// MoviesController MVC Project - Sprint 2
+
+ // GET: Movies_MVC_
+        public ActionResult Index()
+        {
+            List<Movies_MVC> MovieList = new List<Movies_MVC>();
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.GetAsync("").Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    MovieList = WebResult.Content.ReadAsAsync<List<Movies_MVC>>().Result;
+                    return View(MovieList);
+                }
+            }
+            return View();
+        }
+
+        //Create : Movie_MVC
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Movies_MVC movies)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.PostAsJsonAsync("", movies).Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("index");
+                }
+            }
+            return View();
+        }
+
+        public ActionResult Edit(int id)
+        {
+            Movies_MVC movies = new Movies_MVC();
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.GetAsync("" + id.ToString()).Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    movies = WebResult.Content.ReadAsAsync<Movies_MVC>().Result;
+                    return View(movies);
+                }
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Movies_MVC movies)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.PutAsJsonAsync(""+movies.Movie_id.ToString(), movies).Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("index");
+                }
+            }
+            return View();
+        }
+
+        public ActionResult Details(int id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.GetAsync("" + id.ToString()).Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    var movies = WebResult.Content.ReadAsAsync<Movies_MVC>().Result;
+                    return View(movies);
+                }
+            }
+            return View();
+        }
+
+        public ActionResult Delete(int id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.DeleteAsync(""+id.ToString()).Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("index");
+                }
+            }
+            return View();
+        }
+
+=======================================================================
+

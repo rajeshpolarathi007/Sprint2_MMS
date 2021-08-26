@@ -20,6 +20,8 @@ CREATE TABLE Movies
 	Release_year DATE,
 	Duration TIME,
 	Budget MONEY,
+	Movie_path VARCHAR(100),
+	Poster VARCHAR(100),
 	Language_id SMALLINT CONSTRAINT Fk_language_id FOREIGN KEY REFERENCES Language(Language_id) ON DELETE CASCADE,
 	Category_id SMALLINT CONSTRAINT Fk_category_id FOREIGN KEY REFERENCES Category(Category_id) ON DELETE CASCADE,
 	Actor_id SMALLINT CONSTRAINT Fk_actor_id FOREIGN KEY REFERENCES Actor(Actor_id) ON DELETE CASCADE

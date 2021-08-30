@@ -1,0 +1,227 @@
+// index.cshtml mvc
+
+@model IEnumerable<MB_MVC_INSERT.Models.Language_mvc>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Language_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Language1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Language1)
+        </td>
+        
+    </tr>
+}
+
+</table>
+
+
+-------------------
+ 
+
+// Create cshtml mvc
+
+
+@model MB_MVC_INSERT.Models.Actor_mvc
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Actor_mvc</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Actor_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Actor_id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Actor_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lead_Actor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Lead_Actor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Lead_Actor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+------------------------------------------
+
+// language controller mvc
+
+
+ public class LanguageController : Controller
+    {
+        // GET: Language
+        public ActionResult Index()
+        {
+            List<Language_mvc> MovieList = new List<Language_mvc>();
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.GetAsync("https://localhost:44311/api/Languages").Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    MovieList = WebResult.Content.ReadAsAsync<List<Language_mvc>>().Result;
+                    return View(MovieList);
+                }
+            }
+            return View();
+        }
+
+        //Create : Movie_MVC
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Language_mvc movies)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.PostAsJsonAsync("https://localhost:44311/api/Languages", movies).Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("index");
+                }
+            }
+            return View();
+        }
+    }
+
+----------------------------------
+
+actor controller mvc
+
+
+public class ActorController : Controller
+    {
+        // GET: Actor
+
+        public ActionResult Index()
+        {
+            List<Actor_mvc> MovieList = new List<Actor_mvc>();
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.GetAsync("https://localhost:44311/api/Actors").Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    MovieList = WebResult.Content.ReadAsAsync<List<Actor_mvc>>().Result;
+                    return View(MovieList);
+                }
+            }
+            return View();
+        }
+
+        //Create : Movie_MVC
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Actor_mvc movies)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.PostAsJsonAsync("https://localhost:44311/api/Actors", movies).Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("index");
+                }
+            }
+            return View();
+        }
+    }
+
+
+
+--------------------------------
+
+//category controller mvc
+
+
+ public class CatrgoryController : Controller
+    {
+        // GET: Catrgory
+        public ActionResult Index()
+        {
+            List<Category_mvc> MovieList = new List<Category_mvc>();
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.GetAsync("https://localhost:44311/api/Categories").Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    MovieList = WebResult.Content.ReadAsAsync<List<Category_mvc>>().Result;
+                    return View(MovieList);
+                }
+            }
+            return View();
+        }
+
+        //Create : Movie_MVC
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Category_mvc movies)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var WebResult = client.PostAsJsonAsync("https://localhost:44311/api/Categories", movies).Result;
+                if (WebResult.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("index");
+                }
+            }
+            return View();
+        }
+    }
+
+----------------------------
+

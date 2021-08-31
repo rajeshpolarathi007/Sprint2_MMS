@@ -1,0 +1,167 @@
+                                             MOVIES LIST
+
+1.
+movie name :The Chronicles of Narnia
+Rating:4/5
+Lead actor:Georgie Henley                          
+Budget: 18 crores USD
+Category:Adventure
+Language:English
+description:Four children from the same family have to leave their town because of the bombings of WWII.
+Release year: 2008
+link:https://www.youtube.com/watch?v=Nc55VZubiR0
+
+2.
+movie name :Joker
+Rating:5
+Lead actor:Joaquin Phoenix
+Budget:335.45M
+Category:Thriller
+Language:English
+description:In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society.
+Release year:2019
+Link:https://www.youtube.com/watch?v=zAGVQLHvwOY
+
+3.
+movie name :Dangal
+Rating:5
+Lead actor:Aamir khan
+Budget:12.39M
+Category:Action
+Language:Hindi
+description:Former wrestler Mahavir Singh Phogat and his two wrestler daughters struggle 
+Release year:2016
+Link:https://www.youtube.com/watch?v=x_7YlGv9u1g
+
+4.
+movie name :Avengers Endgame
+Rating:4
+Lead actor:Robert Downey Jr
+Budget:858.37M
+Category: Adventure
+Language:English
+description:After the devastating events of Avengers: Infinity War (2018), the universe is in ruins
+Release year:2019
+Link:https://www.youtube.com/watch?v=TcMBFSGVi1c
+
+5.
+movie name :3 Idiots
+Rating:4
+Lead actor:Aamir khan
+Budget:6.53M
+Category:Comedy
+Language:Hindi
+description:Two friends are searching for their long lost companion. They revisit their college days
+Release year:2009
+Link:https://www.youtube.com/watch?v=K0eDlFX9GMc
+
+6.
+movie name :Baahubali 2: The Conclusion
+Rating:5
+Lead actor:Prabhas
+Budget:250 cr
+Category:Action
+Language:Telugu
+description:Kattappa narrates the story of Amarendra Baahubali to Shivudu
+Release year:2017
+Link:https://www.youtube.com/watch?v=qD-6d8Wo3do
+
+7.
+movie name :K.G.F
+Rating:5
+Lead actor:Yash
+Budget:300 cr
+Category: Action
+Language:Kannada
+description:The movie dates back to 1951. Here, two incidents take place; The birth of the hero and other in the Kolar
+Release year:2018
+Link:https://www.youtube.com/watch?v=qXgF-iJ_ezE
+
+8.
+movie name :Uri: The Surgical Strike
+Rating:4
+Lead actor:Vicky Kaushal
+Budget:150 cr
+Category:War
+Language:Hindi
+description:Divided over five chapters, the film chronicles the events of the surgical strike conducted by the Indian
+Release year:2019
+Link:https://www.youtube.com/watch?v=VVY3do673Zc
+
+9.
+movie name :M.S. Dhoni: The Untold Story
+Rating:4
+Lead actor:Sushanth singh Rajput
+Budget:100 cr
+Category:Biography
+Language:Hindi
+description:Mahendra Singh Dhoni is a goalkeeper in school football team.Bannerjee a school cricket coach asks him to join his cricket team
+Release year:2016
+Link:https://www.youtube.com/watch?v=6L6XqWoS8tw
+
+10.
+movie name :Master
+Rating:4
+Lead actor:Vijay
+Budget:250cr
+Category:Acion
+Language:Tamil
+description:Master is an action film from India about a professor, JD, who is sent to teach at a juvenile reform school for three months
+Release year:2021
+Link:https://www.youtube.com/watch?v=1_iUFT3nWHk
+
+11.
+movie name :Titanic
+Rating:5
+Lead actor:Leonardo DiCaprio
+Budget:150cr
+Category:Drama
+Language:English
+description:84 years later, a 100 year-old woman named Rose DeWitt Bukater tells the story to her granddaughter Lizzy Calvert
+Release year:1997
+Link:https://www.youtube.com/watch?v=kVrqfYjkTdQ
+
+12.
+movie name :Dunkirk
+Rating:4
+Lead actor:Fionn Whitehead
+Budget:220cr
+Category:War
+Language:English
+description:May/June 1940. Four hundred thousand British and French soldiers are hole up in the French port town of Dunkirk
+Release year:2017
+Link:https://www.youtube.com/watch?v=F-eMt3SrfFU
+
+13.
+movie name :Drishyam 2
+Rating:4
+Lead actor:Mohanlal
+Budget:190 cr
+Category:Thriller
+Language:Malayalam
+description: A gripping tale of an investigation and a family which is threatened by it. Will Georgekutty be able to protect his family this time?
+Release year:2021
+Link:https://www.youtube.com/watch?v=0f-nd1uGsjQ
+
+14.
+movie name :Jersey
+Rating:5
+Lead actor:Nani
+Budget:200cr
+Category:sport
+Language:Telugu
+description:Luck hasn't always been in favour of Arjun, a gifted cricketer in his mid-thirties whose career has failed to take off
+Release year:2019
+Link:https://www.youtube.com/watch?v=AjAe_Q1WZ_8
+ 
+15.
+movie name :Arjun Reddy
+Rating:4
+Lead actor:Vijay
+Budget:250cr
+Category:Romance
+Language:Telugu
+description:Arjun Reddy, a medico with anger management issues, gets into a brawl with another student and is asked to either apologize or leave college
+Release year:2017
+Link:https://www.youtube.com/watch?v=aozErj9NqeE
+

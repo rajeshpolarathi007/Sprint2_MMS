@@ -6,7 +6,7 @@
             List<Movies_MVC> MovieList = new List<Movies_MVC>();
             using (HttpClient client = new HttpClient())
             {
-                var WebResult = client.GetAsync("").Result;
+                var WebResult = server.GetAsync("").Result;
                 if (WebResult.IsSuccessStatusCode)
                 {
                     MovieList = WebResult.Content.ReadAsAsync<List<Movies_MVC>>().Result;
